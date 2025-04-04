@@ -96,10 +96,20 @@ function Student() {
   };
 
   const handleRequest = (url, method) => {
+    let CAGrade = 0;
+    let examGrade = 0;
+    if (newCAGrade != "") {
+      CAGrade = parseInt(newCAGrade);
+    }
+
+    if (newExamGrade != "") {
+      examGrade = parseInt(newExamGrade);
+    }
+
     const data = {
       module: `http://127.0.0.1:8000/api/module/${selectedModule.code}/`,
-      ca_mark: parseInt(newCAGrade),
-      exam_mark: parseInt(newExamGrade),
+      ca_mark: CAGrade,
+      exam_mark: examGrade,
       cohort: student.cohort,
       student: `http://127.0.0.1:8000/api/student/${studentId}/`
     }
@@ -131,14 +141,6 @@ function Student() {
   }
 
   const handleGradeSubmit = () => {
-    const data = {
-      module: `http://127.0.0.1:8000/api/module/${selectedModule.code}/`,
-      ca_mark: parseInt(newCAGrade),
-      exam_mark: parseInt(newExamGrade),
-      cohort: student.cohort,
-      student: `http://127.0.0.1:8000/api/student/${studentId}/`
-    }
-
     if (grades[selectedModule.code]) {
       // We already have a grade, send a PATCH request
       handleRequest(`http://127.0.0.1:8000/api/grade/${grades[selectedModule.code].id}/`, "PATCH");
