@@ -12,8 +12,6 @@ import {
   Avatar,
   Divider,
   Typography,
-  TextField,
-  InputAdornment,
 } from "@mui/material";
 import SchoolIcon from "@mui/icons-material/School";
 import SearchBar from "../components/SearchBar";

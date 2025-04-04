@@ -10,8 +10,6 @@ import {
   ListItemButton,
   ListItemText,
   Divider,
-  TextField,
-  InputAdornment,
 } from "@mui/material";
 import SearchBar from "../components/SearchBar";
 

@@ -13,7 +13,6 @@ import {
   TextField,
   InputAdornment,
 } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
 import SearchBar from "../components/SearchBar";
 
 function AllModules() {
@@ -21,7 +20,7 @@ function AllModules() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/module")
+    fetch("http://127.0.0.1:8000/api/module/")
       .then((response) => response.json())
       .then((data) => setModules(data));
   }, []);
