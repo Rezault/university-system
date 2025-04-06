@@ -18,7 +18,7 @@ function AllCohorts() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/cohort")
+    fetch("http://127.0.0.1:8000/api/cohort/")
       .then((response) => response.json())
       .then((data) => setCohorts(data));
   }, []);
